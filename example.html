@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <div class="body-stuff">
+      <div class="test">Fancy heading thing</div>
+      <div class="parallax">
+        <img src="http://placekitten.com/1600/1200">
+      </div>
+
+      <div class="test">Hey</div>
+      <div class="parallax">
+        <img src="http://placekitten.com/1600/1300">
+      </div>
+
+      <div class="test">Hey</div>
+      <div class="parallax">
+        <img src="http://placekitten.com/1600/1350">
+      </div>
+
+      <div class="test">Hey</div>
+      <div class="parallax">
+        <img src="http://placekitten.com/1600/1400">
+      </div>
+
+
+      <div class="test">And here's a footer, too</div>
+    </div>
+
+
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script src='https://raw.github.com/sciolist/parallax/master/jquery.parallax.js'></script>
+    <style>
+      body { margin: 0; }
+      .parallax img { width: 100%; }
+      .parallax { height: 450px; }
+      .test {
+        background: white;
+        padding: 200px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      jQuery(".parallax > img").parallax({ speed: 0.2 });
+    </script>
+  </body>
+</html>
+
