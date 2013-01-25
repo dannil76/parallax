@@ -86,7 +86,7 @@ function parallax(opts) {
       var parent = wrapper.data('parent');
       wrapper.width(bounds.width);
 
-      var wrapperHeight = Math.max((bounds.height * 0.7), parent.outerHeight());
+      var wrapperHeight = Math.max((bounds.height * 0.7), 0);
       var width = wrapper.data('width'), height = wrapper.data('height');
       var step = bounds.height - (bounds.height - wrapperHeight) * opts.speed;
       var itemWidth = width * (step / height);
