@@ -86,17 +86,19 @@ function parallax(opts) {
       var parent = wrapper.data('parent');
       wrapper.width(bounds.width);
 
-      var wrapperHeight = Math.max((bounds.height * 0.7), 0);
+      var wrapperHeight = Math.max((bounds.height * 0.7), 200);
       var width = wrapper.data('width'), height = wrapper.data('height');
       var step = bounds.height - (bounds.height - wrapperHeight) * opts.speed;
-      var itemWidth = width * (step / height);
+      var itemWidth = width * (step / height), itemHeight = 0;
 
       if(itemWidth < bounds.width) {
         itemWidth = bounds.width;
-        width = height * (itemWidth / width);
+        itemHeight = height * (itemWidth / width);
       } else {
-        width = step;
+        itemHeight = bounds.height;
+        itemWidth = width * (itemHeight / height);
       }
+
       nodes.push({
         wrapperEl: wrapper[0],
         itemEl: item[0],
@@ -108,9 +110,9 @@ function parallax(opts) {
         },
         item: {
           left: -(itemWidth - bounds.width) / 2,
-          top: -(width - step) / 2,
+          top: -(itemHeight - step) / 2,
           width: itemWidth,
-          height: width
+          height: itemHeight
         }
       });
     });
